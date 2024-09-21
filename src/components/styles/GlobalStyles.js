@@ -7,15 +7,17 @@ const GlobalStyles = createGlobalStyle`
   ${FontFace}
 
   :root {
-    --clr-primary-200:  hsl(257, 27%, 26%);
-    --clr-primary-100:  hsl(180, 66%, 49%);
+    --clr-primary-200: hsl(257, 27%, 26%);
+    --clr-primary-100: hsl(180, 66%, 49%);
 
     --clr-secondary: hsl(0, 87%, 67%); 
 
-    --clr-neutral-400: hsl(255, 11%, 22%);
-    --clr-neutral-300: hsl(257, 7%, 63%);
-    --clr-neutral-200: hsl(0, 87%, 67%);
-    --clr-neutral-100: hsl(0, 0%, 75%);
+    --clr-neutral-600: hsl(255, 11%, 22%);
+    --clr-neutral-500: hsl(257, 7%, 63%);
+    --clr-neutral-400: hsl(0, 87%, 67%);
+    --clr-neutral-300: hsl(0, 0%, 75%);
+    --clr-neutral-200: hsl(225, 33%, 95%);
+    --clr-neutral-100: hsl(100, 100%, 100%);
 
     --fs-500: 2.5rem;
     --fs-400: 1.375rem; 
@@ -23,12 +25,16 @@ const GlobalStyles = createGlobalStyle`
     --fs-200: 1.125rem;
     --fs-100: 1rem;
 
+    --fw-200: 700;
+    --fw-100: 500;
+
     --ff-primary: "Poppins", sans-serif
   }
 
 
   body {
     font-family: var(--ff-primary);
+    background-color: var(--clr-neutral-200);
   }
 `
 
