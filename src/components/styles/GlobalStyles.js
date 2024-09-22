@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
     --clr-neutral-200: hsl(225, 33%, 95%);
     --clr-neutral-100: hsl(100, 100%, 100%);
 
+    --fs-600: 3.125rem;
     --fs-500: 2.5rem;
     --fs-400: 1.375rem; 
     --fs-300: 1.25rem 
@@ -35,6 +36,14 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: var(--ff-primary);
     background-color: var(--clr-neutral-200);
+    color: var(--clr-neutral-500);
+  }
+
+
+  h1 {
+    color: var(--clr-neutral-600);
+    font-size: var(--fs-600);
+    font-weight: var(--fw-200);
   }
 `
 

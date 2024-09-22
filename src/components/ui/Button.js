@@ -13,8 +13,21 @@ const SecondaryStyling = css`
 `
 
 export const Button = styled.button`
-    ${({ variant })=> variant === "secondary" ? SecondaryStyling : DefaultStyling}
+    ${({ $variant })=> $variant === "secondary" ? SecondaryStyling : DefaultStyling}
 
+    width: max-content;
+    font-weight: var(--fw-200);
+    text-transform: capitalize;
+
+    border: none;
+
+    cursor: pointer;
+`
+
+export const SecondaryButton = styled.button`
+    ${SecondaryStyling}
+
+    width: max-content;
     font-weight: var(--fw-200);
     text-transform: capitalize;
 
