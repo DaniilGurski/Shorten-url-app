@@ -1,7 +1,7 @@
 import { styled, css } from "styled-components"
 
 const DefaultStyling = css`
-    padding: 0.5rem 1.5rem;
+    padding: 0.875rem 1.5rem;
     color: var(--clr-neutral-100);
     background-color: var(--clr-primary-100);
     border-radius: 28px;
@@ -9,25 +9,12 @@ const DefaultStyling = css`
 
 const SecondaryStyling = css`
     background: none;
-    color: var(--clr-neutral-500);
+    color: currentColor;
 `
 
 export const Button = styled.button`
     ${({ $variant })=> $variant === "secondary" ? SecondaryStyling : DefaultStyling}
 
-    width: max-content;
-    font-weight: var(--fw-200);
-    text-transform: capitalize;
-
-    border: none;
-
-    cursor: pointer;
-`
-
-export const SecondaryButton = styled.button`
-    ${SecondaryStyling}
-
-    width: max-content;
     font-weight: var(--fw-200);
     text-transform: capitalize;
 

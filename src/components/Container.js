@@ -1,11 +1,11 @@
-import { styled, css } from "styled-components";
+import { styled } from "styled-components";
 
 const containerPaddingInline = 2;
 const containerMaxWidth = 110; 
 const breakoutMaxWidth = 120;
 const breakoutSize = `${(breakoutMaxWidth - containerMaxWidth) / 2}`;
 
-export const ContainerStyling = css`
+const StyledContainer = styled.div`
     display: grid;
     grid-template-columns:
     [full-width-start] minmax(${containerPaddingInline}rem, 1fr)
@@ -20,6 +20,4 @@ export const ContainerStyling = css`
     }
 `
 
-export const Container = styled.div`
-    ${ContainerStyling}
-`
+export default StyledContainer;
