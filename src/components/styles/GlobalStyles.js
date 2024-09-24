@@ -29,7 +29,12 @@ const GlobalStyles = createGlobalStyle`
     --fw-200: 700;
     --fw-100: 500;
 
-    --ff-primary: "Poppins", sans-serif
+    --ff-primary: "Poppins", sans-serif;
+
+    @media (width <= 50em) {
+      --fs-600: 2.625rem; 
+      --fs-500: 1.75rem;
+    }
   }
 
 
@@ -40,10 +45,19 @@ const GlobalStyles = createGlobalStyle`
   }
 
 
-  h1 {
+  h1, h2, h3 {
     color: var(--clr-neutral-600);
-    font-size: var(--fs-600);
     font-weight: var(--fw-200);
+  }
+
+
+  h1 {
+    font-size: var(--fs-600);
+  }
+
+
+  h2 {
+    font-size: var(--fs-500);
   }
 `
 
