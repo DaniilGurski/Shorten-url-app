@@ -2,6 +2,7 @@ import styled from "styled-components"
 import StatisticsCard from "./StatisticsCard"
 import { Grid } from "./Grid"
 
+
 const StyledAdvancedStatistics = styled.section`
 ` 
 
@@ -13,7 +14,20 @@ const TextContent = styled(Grid).attrs({ $gap: "1rem" })`
 `
 
 
-const CardList = styled.ul`
+const CardList = styled(Grid)`
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 8px; 
+        display: inline-block;
+        position: absolute;
+        top: 0; 
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background-color: var(--clr-primary-100);
+    }
 `
 
 export default function AdvancedStatistics() {
@@ -26,7 +40,7 @@ export default function AdvancedStatistics() {
             </p>
         </TextContent>
 
-        <CardList>
+        <CardList as="ul" role="list" $gap="5.75rem">
             <li> <StatisticsCard type="BRAND_RECOGNITION" /> </li>
             <li> <StatisticsCard type="DETAILED_RECORDS" /> </li>
             <li> <StatisticsCard type="FULLY_CUSTOMIZABLE" /> </li>

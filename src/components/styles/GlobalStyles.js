@@ -59,6 +59,11 @@ const GlobalStyles = createGlobalStyle`
   h2 {
     font-size: var(--fs-500);
   }
+
+
+  h3 {
+    font-size: var(--fs-400);
+  }
 `
 
 export default GlobalStyles;

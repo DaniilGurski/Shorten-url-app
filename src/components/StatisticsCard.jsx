@@ -7,10 +7,25 @@ import { Grid } from "./Grid";
 
 
 const StyledStatisticsCard = styled.article`
+    position: relative;
+    border-radius: 5px;
+    padding: 2rem;
+    padding-top: 4.813rem;
+    background-color: var(--clr-neutral-100);
+    text-align: var(--card-text-align, center);
 `;
 
 
-const Icon = styled.img`
+const Icon = styled.div`
+    width: max-content;
+    padding: 1.5rem;
+    border-radius: 99rem;
+    background-color: var(--clr-primary-200);
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `;
 
 
@@ -46,7 +61,9 @@ export default function StatisticsCard({ type }) {
 
     return (
         <StyledStatisticsCard>
-            <Icon src={cardContent?.icon} alt="" />
+            <Icon>
+                <img src={cardContent?.icon} alt="" />
+            </Icon>
             <TextContent>
                 <h3>{cardContent?.heading}</h3>
                 <p> {cardContent?.body} </p>
