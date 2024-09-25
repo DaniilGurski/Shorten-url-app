@@ -46,7 +46,7 @@ const GlobalStyles = createGlobalStyle`
 
 
   h1, h2, h3 {
-    color: var(--clr-neutral-600);
+    color: var(--heading-color, var(--clr-neutral-600));
     font-weight: var(--fw-200);
   }
 
