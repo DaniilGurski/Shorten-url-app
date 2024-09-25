@@ -11,8 +11,12 @@ const StyledStatisticsCard = styled.article`
     border-radius: 5px;
     padding: 2rem;
     padding-top: 4.813rem;
-    background-color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral-100);   
     text-align: var(--card-text-align, center);
+
+    @media (width >= 50em) {
+        aspect-ratio: 1 / 0.7;
+    }
 `;
 
 
@@ -26,6 +30,10 @@ const Icon = styled.div`
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (width >= 50em) {
+        left: 15%;
+    }
 `;
 
 
