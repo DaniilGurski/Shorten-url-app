@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
 
     --clr-secondary: hsl(0, 87%, 67%); 
 
+    --clr-neutral-700: hsl(260, 8%, 14%);
     --clr-neutral-600: hsl(255, 11%, 22%);
     --clr-neutral-500: hsl(257, 7%, 63%);
     --clr-neutral-400: hsl(0, 87%, 67%);
@@ -63,6 +64,12 @@ const GlobalStyles = createGlobalStyle`
 
   h3 {
     font-size: var(--fs-400);
+  }
+
+  
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `
 
