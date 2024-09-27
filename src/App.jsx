@@ -17,7 +17,7 @@ export default function App() {
       <GlobalStyles />
       
       <Main> 
-        <StyledContainer gap="clamp(5rem, 10vw, 7.5rem)">
+        <StyledContainer $gap="clamp(5rem, 10vw, 7.5rem)">
           <HeroOverlap> 
             <Hero />
             <LinkShortener /> 
