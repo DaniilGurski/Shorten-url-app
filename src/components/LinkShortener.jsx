@@ -6,6 +6,12 @@ import shortenBgMobile from "../assets/images/bg-shorten-mobile.svg";
 import shortenBgDesktop from "../assets/images/bg-shorten-desktop.svg";
 import { Button } from "./ui/Button";
 
+
+const StyledLinkShortener = styled(Grid)`
+    grid-row: shortener;
+    z-index: 999;
+`
+
 const Form = styled.form`
     display: grid; 
     gap: 1rem 1.5rem;
@@ -42,19 +48,13 @@ const SubmitButton = styled(Button)`
     border-radius: 5px;
 `
 
-const ResultList = styled.ul`
-`
-
-
 export default function LinkShortener() {
   return (
-    <Grid as="section" $gap="1rem">
+    <StyledLinkShortener $gap="1rem">
         <Form>
             <SearchBar placeholder="Shorten a link here..."/>
             <SubmitButton> Shorten It ! </SubmitButton>
         </Form>
-
-        <ResultList> </ResultList>
-    </Grid>
+    </StyledLinkShortener>
   )
 }
