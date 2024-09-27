@@ -14,6 +14,7 @@ const StyledContainer = styled.div`
     [content-end] minmax(0, ${breakoutSize}ch)
     [breakout-end] minmax(${containerPaddingInline}rem, 1fr)
     [full-width-end];
+    row-gap: ${({ gap }) => gap};
     
     > * {
         grid-column: content;

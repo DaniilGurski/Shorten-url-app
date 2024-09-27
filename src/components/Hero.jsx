@@ -5,14 +5,19 @@ import menu from "../assets/images/menu.svg";
 import StyledContainer from "./Container";
 import { Flex, FlexAlignCenter } from "./Flex";
 import { Button } from "./ui/Button";
+import LinkShortener from "./LinkShortener";
 
 
-const StyledHero = styled(StyledContainer).attrs({ as: "section" })`
-    padding-block: 3rem;
+const StyledHero = styled(StyledContainer)`
     grid-column: full-width;
+    grid-row: hero;
+    row-gap: clamp(1.438rem, 3vw, 4.563rem);
+
+    padding-block: 3rem;
+    padding-bottom: 10.5rem;
     background-color: var(--clr-neutral-100);
 
-    row-gap: clamp(1.438rem, 3vw, 4.563rem);
+    position: relative;
 `;
 
 
@@ -184,6 +189,8 @@ export default function Hero() {
                     <Button> Get Started </Button>
                 </MainContent>
             </Main>
+
+            {/* <LinkShortener /> */}
         </StyledHero>
     )
 }
