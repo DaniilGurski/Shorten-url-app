@@ -1,16 +1,18 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import { Button } from "./ui/Button";
 import { Flex, FlexAlignCenter } from "./Flex";
+import { Grid } from "./Grid";
 
 
-const StyledResultList = styled.ul`
+const StyledResultList = styled(Grid)`
   grid-row: results;
   color: var(--clr-primary-200);
 `;
 
 
 const ResultItem = styled(Flex).attrs({ as: "li" })`
+  overflow-x: scroll;
   flex-direction: column;
   
   padding: 1.125rem 2rem;
@@ -30,7 +32,7 @@ const ResultItem = styled(Flex).attrs({ as: "li" })`
 const ShortenLink = styled(Flex)`
   --_space-around: 0.875rem;
 
-  flex-direction: column;
+  display: grid;
   border-top: 2px solid var(--clr-neutral-200);
   margin-inline: -2rem; 
   margin-top: var(--_space-around);
@@ -42,7 +44,7 @@ const ShortenLink = styled(Flex)`
   }
 
   @media (width >= 50em) {
-    flex-direction: row;
+    grid-template-columns: min-content 8rem;
     align-items: center;
     gap: 1.5rem;
 
@@ -56,20 +58,43 @@ const ShortenLink = styled(Flex)`
 
 const CopyButton = styled(Button)`
   border-radius: 5px;
+  ${({ $selected }) => $selected && css`
+    background-color: var(--clr-neutral-600);
+
+  `}
 `;
 
 
-export default function ResultList() {
-  return (
-    <StyledResultList role="list">
-      {/* <ResultItem> 
-        <span> https://www.frontendmentor.io </span>
+export default function ResultList({ setShortenUrls, shortenUrls }) {
+  const onCopyClick = (copyUrlGroup) => {
+    setShortenUrls([...shortenUrls.map(urlGroup => ({
+      ...urlGroup, 
+      selected: urlGroup.shortUrl === copyUrlGroup.shortUrl
+    }))])
 
-        <ShortenLink $gap="0.5rem">
-          <span> https://rel.ink/k4lKyk </span>
-          <CopyButton> Copy </CopyButton>
-        </ShortenLink>
-      </ResultItem> */}
+    navigator.clipboard.writeText(copyUrlGroup.shortUrl);
+  }
+
+  return (
+    <StyledResultList as="ul" role="list" $gap="1rem">
+      {
+        shortenUrls.map(urlGroup => {
+          const { longUrl, shortUrl, selected } = urlGroup;
+
+          return ( 
+            <ResultItem key={shortUrl}> 
+              <span> {longUrl} </span>
+      
+              <ShortenLink $gap="0.5rem">
+                <span> {shortUrl} </span>
+                <CopyButton onClick={() => onCopyClick(urlGroup)} $selected={selected}> 
+                  {selected ? "Copied !" : "Copy"}
+                </CopyButton>
+              </ShortenLink>
+            </ResultItem>
+          )
+        })
+      }
     </StyledResultList>
   )
 }

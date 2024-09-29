@@ -5,7 +5,7 @@ import menu from "../assets/images/menu.svg";
 import StyledContainer from "./Container";
 import { Flex, FlexAlignCenter } from "./Flex";
 import { Button } from "./ui/Button";
-import LinkShortener from "./LinkShortener";
+import UrlShortener from "./UrlShortener";
 
 
 const StyledHero = styled(StyledContainer)`
@@ -190,7 +190,7 @@ export default function Hero() {
                 </MainContent>
             </Main>
 
-            {/* <LinkShortener /> */}
+            {/* <UrlShortener /> */}
         </StyledHero>
     )
 }
