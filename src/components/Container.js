@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
-const containerPaddingInline = 2;
+export const containerPaddingInline = 2;
 const containerMaxWidth = 110; 
-const breakoutMaxWidth = 120;
+export const breakoutMaxWidth = 120;
 const breakoutSize = `${(breakoutMaxWidth - containerMaxWidth) / 2}`;
 
 const StyledContainer = styled.div`

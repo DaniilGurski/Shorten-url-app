@@ -7,13 +7,16 @@ import { Flex, FlexAlignCenter } from "./Flex";
 import { Button } from "./ui/Button";
 import UrlShortener from "./UrlShortener";
 
+import { containerPaddingInline, breakoutMaxWidth } from "./Container";
+import { useState } from "react";
+
 
 const StyledHero = styled(StyledContainer)`
     grid-column: full-width;
     grid-row: hero;
     row-gap: clamp(1.438rem, 3vw, 4.563rem);
 
-    padding-block: 3rem;
+    padding-block: 8rem 3rem;
     padding-bottom: 10.5rem;
     background-color: var(--clr-neutral-100);
 
@@ -22,7 +25,10 @@ const StyledHero = styled(StyledContainer)`
 
 
 const Header = styled(FlexAlignCenter).attrs({ as: "header", $gap: "2.813rem" })`
-    position: relative;
+    width: min(100% - (${containerPaddingInline}rem * 2), ${breakoutMaxWidth}ch);
+    position: fixed;
+    top: 3rem;
+    z-index: 1000000;
 
     @media (width <= 50em) {
         justify-content: space-between;
@@ -35,15 +41,16 @@ const HeaderMenu = styled(FlexAlignCenter)`
     justify-content: space-between;
 
     @media (width <= 50em) {
-        visibility: hidden;
+        display: ${({ $active }) => $active ? "flex" : "none"};
         width: min(90%, 25rem);
-
+        
         top: 100%;
         left: 50%; 
-        transform: translate(-50%);
-
+        transform: translate(-50%, 1.475rem);
+        
         flex-direction: column;
         position: absolute;
+        z-index: 999999;
         gap: 2rem;
 
         padding: 2.5rem;
@@ -151,14 +158,15 @@ const Main = styled.div`
 
 
 export default function Hero() {
+    const [menuOpened, setMenuOpened] = useState(false)
     return (
         <StyledHero>
             <Header>
                 <img src={logo} alt="logo" />
 
-                <HeaderMenu>
+                <HeaderMenu $active={menuOpened}> 
                     <HeaderNav>
-                        <PrimaryNav role="list">
+                        <PrimaryNav id="primary-nav" role="list">
                             <li><a href="#"> Features  </a></li>
                             <li><a href="#"> Pricing   </a></li>
                             <li><a href="#"> Resources </a></li>
@@ -169,10 +177,14 @@ export default function Hero() {
                         <Button $variant="secondary"> Login </Button>
                         <Button> Sign up </Button>
                     </PrimaryButtons>
-
                 </HeaderMenu>
 
-                <BurgerMenu $variant="secondary">
+                <BurgerMenu 
+                $variant="secondary" 
+                aria-controls="primary-nav" 
+                aria-expanded={menuOpened}
+                onClick={() => setMenuOpened(!menuOpened)}
+                >
                     <img src={menu} alt="menu" />
                 </BurgerMenu>
             </Header>
