@@ -82,7 +82,7 @@ export default function Footer() {
     <StyledFooter as="footer" $gap="3.125rem">
         <Logo src={logo} alt="logo" />
 
-        <Menu as="nav" $gap="2.5rem">
+        <Menu as="nav" $gap="2.5rem" aria-label="footer menu">
             <MenuContentColumn>
                 <h3> Features </h3>
 
