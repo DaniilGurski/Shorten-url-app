@@ -5,11 +5,19 @@ const DefaultStyling = css`
     color: var(--clr-neutral-100);
     background-color: var(--clr-primary-100);
     border-radius: 28px;
+
+    &:is(:hover, :focus) {
+        background-color: hsl(180, 57%, 75%);
+    }
 `
 
 const SecondaryStyling = css`
     background: none;
     color: currentColor;
+
+    &:is(:hover, :focus) {
+        color: var(--clr-primary-200);
+    }
 `
 
 export const Button = styled.button`
