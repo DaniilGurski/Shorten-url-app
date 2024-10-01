@@ -36,7 +36,8 @@ const MenuContentColumn = styled.div`
 
     text-align: center;
 
-    > h4 {
+    > h3 {
+        font-size: var(--fs-100);
         font-weight: var(--fw-200);
         color: var(--clr-neutral-100);
     }
@@ -83,7 +84,7 @@ export default function Footer() {
 
         <Menu as="nav" $gap="2.5rem">
             <MenuContentColumn>
-                <h4> Features </h4>
+                <h3> Features </h3>
 
                 <ul role="list">
                     <li><a href="#"> Link Shortening </a></li>
@@ -93,7 +94,7 @@ export default function Footer() {
             </MenuContentColumn>
 
             <MenuContentColumn>
-                <h4> Resources </h4>
+                <h3> Resources </h3>
 
                 <ul role="list">
                     <li><a href="#"> Blog </a></li>
@@ -103,7 +104,7 @@ export default function Footer() {
             </MenuContentColumn>
 
             <MenuContentColumn>
-                <h4> Company </h4>
+                <h3> Company </h3>
 
                 <ul role="list">
                     <li><a href="#"> About </a></li>
