@@ -31,6 +31,7 @@ const Form = styled.form`
         grid-template-columns: 1fr max-content;
 
         background-image: url(${shortenBgDesktop});
+        background-size: cover;
     }
 `
 
@@ -81,6 +82,7 @@ export default function UrlShortener({ onSubmit, urlInput, setUrlInput, formVali
                 <SearchBar 
                 value={urlInput}
                 placeholder="Shorten a link here..."
+                aria-label="long url input"
                 aria-describedby="error-message"
                 onChange={(e) => setUrlInput(e.target.value)}
                 $formValid={formValid}
@@ -91,7 +93,7 @@ export default function UrlShortener({ onSubmit, urlInput, setUrlInput, formVali
                 </ErrorMessage>
             </SearchBarContainer>
 
-            <SubmitButton> Shorten It ! </SubmitButton>
+            <SubmitButton type="submit"> Shorten It ! </SubmitButton>
         </Form>
     </StyledUrlShortener>
   )

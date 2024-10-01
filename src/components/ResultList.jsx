@@ -76,7 +76,7 @@ export default function ResultList({ setShortenUrls, shortenUrls }) {
   }
 
   return (
-    <StyledResultList as="ul" role="list" $gap="1rem">
+    <StyledResultList as="ul" role="list" aria-label="shorten URLS" $gap="1rem">
       {
         shortenUrls.map(urlGroup => {
           const { longUrl, shortUrl, selected } = urlGroup;

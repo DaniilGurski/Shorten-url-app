@@ -5,7 +5,7 @@ import twitterIcon from "../assets/images/icon-twitter.svg"
 import pinterestIcon from "../assets/images/icon-pinterest.svg"
 import instagramIcon from "../assets/images/icon-instagram.svg"
 
-import { Flex } from "./Flex"
+import { Flex, FlexAlignCenter } from "./Flex"
 import { Grid } from "./Grid"
 
 
@@ -46,6 +46,16 @@ const MenuContentColumn = styled.div`
         display: grid;
         row-gap: 0.625rem;
     }
+
+
+    a:is(:hover, :focus) {
+        color: var(--clr-primary-100);
+    }
+
+
+    a:is(:hover, :focus) {
+        color: var(--clr-primary-100);
+    }
 `;
 
 
@@ -62,14 +72,14 @@ const Menu = styled(Flex)`
 `;
 
 
-const SocialMedia = styled(Flex)`
+const SocialMedia = styled(FlexAlignCenter)`
 `
 
 
 export default function Footer() {
   return (
     <StyledFooter as="footer" $gap="3.125rem">
-        <Logo src={logo}/>
+        <Logo src={logo} alt="logo" />
 
         <Menu as="nav" $gap="2.5rem">
             <MenuContentColumn>
@@ -103,7 +113,7 @@ export default function Footer() {
                 </ul>
             </MenuContentColumn>
 
-            <SocialMedia as="ul" role="list" $gap="1.5rem">
+            <SocialMedia as="ul" role="list" $gap="1.5rem" aria-label="social media">
                 <li><a href="#"><img src={facebookIcon} alt="facebook" /></a></li>
                 <li><a href="#"><img src={twitterIcon} alt="twitter" /></a></li>
                 <li><a href="#"><img src={pinterestIcon} alt="pinterest" /></a></li>

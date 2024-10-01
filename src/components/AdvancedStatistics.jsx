@@ -83,7 +83,7 @@ export default function AdvancedStatistics() {
             </p>
         </TextContent>
 
-        <CardList as="ul" role="list" $gap="5.75rem">
+        <CardList as="ul" role="list" aria-label="statistic cards" $gap="5.75rem">
             <li> <StatisticsCard type="BRAND_RECOGNITION" /> </li>
             <li> <StatisticsCard type="DETAILED_RECORDS" /> </li>
             <li> <StatisticsCard type="FULLY_CUSTOMIZABLE" /> </li>

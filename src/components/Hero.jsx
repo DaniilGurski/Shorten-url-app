@@ -36,6 +36,15 @@ const Header = styled(FlexAlignCenter).attrs({ as: "header", $gap: "2.813rem" })
 `;
 
 
+const PrimaryButtons = styled(Flex)`
+    order: 3;
+
+    @media (width <= 50em) {
+        gap: 1.5rem
+    }
+`;
+
+
 const HeaderMenu = styled(FlexAlignCenter)`
     width: 80%;
     justify-content: space-between;
@@ -58,10 +67,12 @@ const HeaderMenu = styled(FlexAlignCenter)`
         background-color: var(--clr-primary-200);
         color: var(--clr-neutral-100);
 
+
         * {
             align-items: center;
             flex-direction: column;
         }
+
 
         &::after {
             content: "";
@@ -69,6 +80,15 @@ const HeaderMenu = styled(FlexAlignCenter)`
             height: 2px;
             background-color: var(--clr-neutral-500);
             order: 2;
+        }
+
+
+        ${PrimaryButtons} {
+            width: 100%;
+
+            > button {
+                width: inherit;
+            }
         }
     }
 `;
@@ -87,15 +107,10 @@ const PrimaryNav = styled.ul`
         text-decoration: none;
         font-weight: var(--fw-200);
         color: currentColor;
-    }
-`;
 
-
-const PrimaryButtons = styled(Flex)`
-    order: 3;
-
-    @media (width <= 50em) {
-        gap: 1.5rem
+        &:is(:hover, :focus) {
+            color: var(--clr-primary-200);
+        }
     }
 `;
 
@@ -127,6 +142,7 @@ const MainContent = styled.article`
 const Main = styled.div`
     display: grid;
     justify-items: center;
+    row-gap: 3.75rem;
     text-align: center;
 
     &::before {
