@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import logo from "../assets/images/logo.svg";
 import menu from "../assets/images/menu.svg";
+import heroIllustration from "../assets/images/illustration-working.svg";
 
-import StyledContainer from "./Container";
+import { useState } from "react";
 import { Flex, FlexAlignCenter } from "./Flex";
 import { Button } from "./ui/Button";
+import StyledContainer from "./Container";
 import UrlShortener from "./UrlShortener";
-
 import { containerPaddingInline, breakoutMaxWidth } from "./Container";
-import { useState } from "react";
 
 
 const StyledHero = styled(StyledContainer)`
@@ -149,7 +149,7 @@ const Main = styled.div`
         content: "";
         width: min(90%, 20.438rem);
         aspect-ratio: 1;
-        background: url("../assets/images/illustration-working.svg") no-repeat;
+        background: url(${heroIllustration}) no-repeat;
         background-size: cover;
     }
 
