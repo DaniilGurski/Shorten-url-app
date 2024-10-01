@@ -149,7 +149,7 @@ const Main = styled.div`
         content: "";
         width: min(90%, 20.438rem);
         aspect-ratio: 1;
-        background: url("src/assets/images/illustration-working.svg") no-repeat;
+        background: url("../assets/images/illustration-working.svg") no-repeat;
         background-size: cover;
     }
 
