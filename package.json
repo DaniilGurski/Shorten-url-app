@@ -1,7 +1,7 @@
 {
   "name": "fm-shorten-url",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -31,5 +31,10 @@
     "globals": "^15.9.0",
     "nodemon": "^3.1.7",
     "vite": "^5.4.1"
-  }
+  },
+  "description": "Responsive web application for shortening links. Enter a link in the text box, click on “Shorten it !” and get a quick copyable result.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
